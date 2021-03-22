@@ -57,12 +57,28 @@ test(`Testing a callback`, () => {
 /**
  * @concept Test only one test
  * @o To use this technique it's necessary to install globally jest
+ * @tst >sudo npm i -g jest
  * @a Use the following code changing the route for the test
  * @tst >jest src/__test__/global.test.js
- * ##----------------------------------------------------------------
+ * ----------------------------------------------------------------
  * @o If you want to test from a project with jest installed and configured to npm run test
  * @a Declare the test with jest script into the package file
  * @context "test": "jest"
  * @a Use the following code changing the route for the test
  * @tst >npm run test -- src/__test__/global.test.js
+ *
+ * ##----------------------------------------------------------------
+ *
+ * @concept Watch for changes on tests.
+ * @o To automatize the process. While you build the test suite, Jest can watch for changes.
+ * @a Declare a new script on package.json
+ * @context "test:watch": "jest --watch"
+ *
+ * ##----------------------------------------------------------------
+ *
+ * @concept Coverage Report
+ * @o Jest can report the coverage of the project tests. This will generate a visual report.
+ * @o Located in ./coverage/Icov-report/index.html
+ * @a Declare a new script on package.json
+ * @context "test:coverage": "jest --coverage"
  */
