@@ -54,6 +54,52 @@ test(`Testing a callback`, () => {
   })
 });
 
+
+// @concept Promises comparison test
+const reverseStringPromise = str => {
+  return new Promise((resolve, reject) => {
+    if (!str) { reject('Error') }
+
+    resolve(str.split('').reverse().join(''));
+  });
+}
+
+test(`Testing a Promise`, () => {
+  reverseStringPromise('Hello')
+    .then(string => {
+      expect(string).toBe('olleH');
+    })
+});
+
+
+// @concept async/await comparison test
+test(`Testing an async/await function`, async () => {
+  const string = await reverseStringPromise('Hello');
+  expect(string).toBe('olleH');
+});
+
+
+// @concept Code that need to run before and after every test
+beforeEach(() => {
+  console.log('Before every test');
+});
+afterEach(() => {
+  console.log('After every test');
+});
+
+
+// @concept Code that need to run before and after all the tests
+beforeAll(() => {
+  console.log('Before all the tests');
+  console.log('====================================');
+})
+afterAll(() => {
+  console.log('====================================');
+  console.log('After all the tests');
+})
+
+
+
 /**
  * @concept Test only one test
  * @o To use this technique it's necessary to install globally jest
