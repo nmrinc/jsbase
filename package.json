@@ -4,7 +4,9 @@
 	"description": "React unit testing with Jest",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest"
+		"test": "jest",
+		"test:watch": "jest --watch",
+		"test:coverage": "jest --coverage"
 	},
 	"author": "Erick Avila",
 	"license": "MIT",
